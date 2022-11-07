@@ -13,15 +13,12 @@ function getPWLength() {
   var len = 0;
   var again = true;
 
-  console.log("in getPWLength")
-
   while(again) {
     len = window.prompt("Please enter the length of the password:");
 
     //get out if cancel; if input is not a number of not anumber between 8 and 128, prompt again
     if(len == null){
-      console.log("user cancelled");
-      again = false;
+      again = false; //user cancelled
     } else if ((len < 8 || len > 128) || (isNaN(len))){
       alert("Please choose a number between 8 and 128.");
       again = true;
@@ -41,39 +38,18 @@ function askUserCharTypePref() {
 
   //ask the user for what type of characters they want in the password
   lCase = confirm("Would you like a lower case character in your password?");
-  console.log("lCase = " + lCase);
 
   uCase = confirm("Would you like an upper case character in your password?");
-  console.log("uCase = " + uCase);
 
   numeric = confirm("Would you like a numeric in your password?");
-  console.log("numeric = " + numeric);
 
   spChar = confirm("Would you like a special character in your password?");
-  console.log("spChar = " + spChar);
 
-  //if there are no character, ask the user to select at least one
- if(lCase == false && uCase == false)
-  oneChar = false;
-
-  //keep asking till user select either L or U
-  while(oneChar == false){
-
-    charSel = prompt("At least one character needs to be selected.  Enter L for lowercase or U for uppercase character:");
-
-    if(charSel != null)
-      charSel = charSel.toUpperCase();
-    if(charSel == "L"){
-     lCase = true;
-     oneChar = true;
-    } else if (charSel == "U"){
-      uCase = true;
-      oneChar = true;
-    } else {
-      oneChar = false;
-    }
-
-  }   
+  //Recurse if no character type is selected.
+  if(!lCase && !uCase && !numeric && !spChar){
+    alert("You must select atleast one type of character.");
+    askUserCharTypePref();
+  } 
 
 }
 
@@ -111,8 +87,6 @@ function createPassword(len) {
     selChar += punctuation;
     numCat++;
   }
-
-  console.log("numCat = " + numCat);
 
   //Extra: To ensure that the password have at least of each category the user wanted, we will reduce the lopp with # of selections the user made.  
   //Then we will add one random character from each type at the end of password.  
@@ -154,13 +128,14 @@ function generatePassword() {
   var length = 0;
   var password = "";
 
-  console.log("in writePassword");
-
-
   //get length - should be atleast 8
   length = getPWLength();
 
-  console.log("lenght = " + length);
+  //user cancelled
+  if(length == null){
+    password = "";
+    return password;
+  }
 
   //Get character types
   askUserCharTypePref();
@@ -176,9 +151,11 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  console.log("in writePassword");
-
-  passwordText.value = password;
+  if(password != ""){
+    passwordText.value = password;
+  }else {
+    passwordText.value = ""; //in case user cancelled
+  }
 
 }
 
