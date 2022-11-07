@@ -21,10 +21,10 @@ Password generator page provides the following functionality as it created a sec
 
 ## Mock Up
 
-![Screenshot of the page](./assets/screenshot1.JPG)
+![Screenshot of the page](./Assets/screenshot1.JPG)
 
 Demo of the project:
-![portfolio demo](./assets/Password-Generator-Demo.gif)
+![portfolio demo](./Assets/Password-Generator-Demo.gif)
 
 
 ## Usage
