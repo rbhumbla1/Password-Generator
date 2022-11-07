@@ -21,7 +21,7 @@ Password generator page provides the following functionality as it created a sec
 
 ## Mock Up
 
-![Screenshot of the page](./Assets/screenshot1.JPG)
+![Screenshot of the page](./Assets/Screenshot.JPG)
 
 Demo of the project:
 ![portfolio demo](./Assets/Password-Generator-Demo.gif)
