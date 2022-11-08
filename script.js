@@ -37,11 +37,11 @@ function askUserCharTypePref() {
   var charSel = "";
 
   //ask the user for what type of characters they want in the password
-  lCase = confirm("Would you like a lower case character in your password?");
+  lCase = confirm("Would you like a lowercase character in your password?");
 
-  uCase = confirm("Would you like an upper case character in your password?");
+  uCase = confirm("Would you like an uppercase character in your password?");
 
-  numeric = confirm("Would you like a numeric in your password?");
+  numeric = confirm("Would you like a number in your password?");
 
   spChar = confirm("Would you like a special character in your password?");
 

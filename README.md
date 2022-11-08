@@ -17,7 +17,7 @@ Password generator page provides the following functionality as it created a sec
     * Characters l, I, 0, O, o are removed from charcter set to avoid confusion
     * To ensure that the password have at least of each category the user wanted, we will reduce the lopp with # of selections the user made.  Then we will add one random character from each type at the end of password. For example, if user selected lowercase, uppercase & special character, we will loopp till len-3.  And then we will concat 3 random chars at end of password, one from lowercase, one from uppercase and one from special character 
     * The password string is then shuffled to make sure that it is again in random order.
-5. The final password is then written in the textbax of the page.
+5. The final password is then written in the textbox of the page.
 
 ## Mock Up
 
